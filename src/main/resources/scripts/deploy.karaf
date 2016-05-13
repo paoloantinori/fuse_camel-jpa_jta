@@ -1,4 +1,4 @@
-features:install jndi jpa hibernate camel-jpa transaction
+features:install jndi jpa hibernate camel-jpa transaction connector
 
 install -s wrap:mvn:org.postgresql/postgresql/9.3-1102-jdbc41
 install -s mvn:org.apache.commons/commons-pool2/2.2

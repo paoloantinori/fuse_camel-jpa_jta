@@ -10,7 +10,7 @@ public class JpaRoutes extends RouteBuilder {
   public void configure() throws Exception {
     from("timer://jpaTimer?fixedRate=true&period=5000")
       .routeId("=== expect_success ===")
-      .transacted("JTA_TRANSACTION")
+      .transacted()
       .log("Generating New Person")
       .setBody(constant(new Person(Person.generateName())))
       .log("Saving Person")
@@ -20,7 +20,7 @@ public class JpaRoutes extends RouteBuilder {
 
       from("timer://jpaTimer?fixedRate=true&period=5000")
         .routeId("=== expected_failure ===")
-        .transacted("JTA_TRANSACTION")
+        .transacted()
         .log("Generating New Person")
         .setBody(constant(new Person("this_should_be_rolled_back_" + Person.generateName())))
         .log("Saving Person")
