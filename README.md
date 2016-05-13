@@ -13,8 +13,6 @@ source mvn:com.redhat.consulting.fusequickstarts.karaf/jpa/6.2.1/karaf
 To check:
 
 ```bash
-docker exec -it fuse-postgresql-server psql -U fuse -d jpa
-
-# select * from Person;
+docker exec -it fuse-postgresql-server psql -U fuse -d jpa -c "select * from Person;"
 
 ```
